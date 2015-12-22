@@ -50,6 +50,9 @@ class TodoStore extends ReduceStore<string, Todo> {
       case 'todo/update-text':
         return state.setIn([action.id, 'text'], action.text.trim());
 
+      case 'todo/color':
+        return state.setIn([action.id, 'color'], action.color);
+
       default:
         return state;
     }

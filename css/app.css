@@ -16,3 +16,91 @@
 #todo-list li .edit {
   display: inline;
 }
+
+
+/**
+ * Additonal styling for a the color selector
+ * Author: Varun Dev
+ *
+*/
+
+#todo-list li .destroy {
+	margin:0;
+	top:4px;
+	right:9px;
+	bottom:inherit;
+	height:auto;
+	width: auto;
+}
+
+#todo-list li .destroy:hover {
+	text-shadow: 0 0 1px #000,
+				 0 0 10px rgba(199, 107, 107, 0.8);
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#todo-list .color-selector{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;  
+	list-style: none;
+}
+
+
+#todo-list .color-selector .color-button {
+	display: none;
+	height: 13px;
+	width: 13px;
+	margin-left: 5px;
+	border:1px solid #6c615c;
+	background: linear-gradient(135deg, #fbafa9 0%,#b0fba9 100%);
+}
+
+#todo-list li:hover .color-selector .color-button {
+	display: inline-block;
+}
+
+#todo-list .color-selector .color-list {
+	display: none;
+}
+
+#todo-list li:hover .color-selector .color-list.show {
+	display: inline-block;
+}
+
+#todo-list .color-selector li {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	border:1px solid #6c615c;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+/* colors */
+
+#todo-list .color-selector li.red {
+	background-color: #fbafa9;
+}
+
+#todo-list .color-selector li.green {
+	background-color: #b0fba9;
+}
+
+#todo-list .color-selector li.blue {
+	background-color: #8089ff;
+}
+
+#todo-list li.color-red label{
+	background-color: #fbafa9;
+}
+
+#todo-list li.color-green label{
+	background-color: #b0fba9;
+}
+
+#todo-list li.color-blue label{
+	background-color: #8089ff;
+}

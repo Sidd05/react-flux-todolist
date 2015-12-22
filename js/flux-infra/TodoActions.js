@@ -38,4 +38,9 @@ export type Action =
     type: 'todo/update-text',
     id: string,
     text: string,
+  } |
+  {
+    type: 'todo/color',
+    id: string,
+    color: string,
   };

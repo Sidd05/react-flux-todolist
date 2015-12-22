@@ -17,18 +17,21 @@ const TodoRecord = Immutable.Record({
   id: undefined,
   complete: undefined,
   text: undefined,
+  color: undefined
 });
 
 export default class Todo extends TodoRecord {
   id: string;
   complete: boolean;
   text: string;
+  color: string;
 
-  constructor(text: string) {
+  constructor(text: string, color: string) {
     super({
       id: Date.now() + Math.round(Math.random() * 1000),
       complete: false,
       text,
+      color:color
     });
   }
 }

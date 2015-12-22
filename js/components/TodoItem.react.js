@@ -16,6 +16,8 @@ import type Todo from '../flux-infra/Todo';
 import {dispatch} from '../flux-infra/TodoDispatcher';
 import React, {Component} from 'react';
 import TodoTextInput from './TodoTextInput.react';
+import TodoItemColor from './TodoItemColor.react';
+
 
 import classnames from 'classnames';
 
@@ -50,6 +52,7 @@ export default class TodoItem extends Component<{}, Props, State> {
         className={classnames({
           'completed': todo.complete,
           'editing': this.state.isEditing,
+          [`color-${todo.color}`]:todo.color
         })}
         key={todo.id}>
         <div className="view">
@@ -62,6 +65,7 @@ export default class TodoItem extends Component<{}, Props, State> {
           <label onDoubleClick={this._onDoubleClick}>
             {todo.text}
           </label>
+          <TodoItemColor onChangeColor={this._onChangeColor}/>
           <button className="destroy" onClick={this._onDestroyClick} />
         </div>
         {input}
@@ -104,5 +108,14 @@ export default class TodoItem extends Component<{}, Props, State> {
       type: 'todo/destroy',
       id: todo.id,
     });
+  }
+
+  _onChangeColor = (color) => {
+    const {todo} = this.props;
+    dispatch({
+      type: 'todo/color',
+      id: todo.id,
+      color: color
+    })
   }
 }
